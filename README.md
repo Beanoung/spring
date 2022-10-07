@@ -1,3 +1,3 @@
 # spring
 
-Spirng projects
+Spirng tests

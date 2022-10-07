@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用FactoryBean不需要配置id
+     实际是将UserFactoryBean的getObject()返回的Object交给ioc容器 -->
+    <bean class="com.beanoung.spring.factory.UserFactoryBean"></bean>
+
+</beans>

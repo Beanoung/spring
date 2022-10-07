@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将三层架构交给IOC管理 -->
+    <!-- autowire属性:自动装配(自动注入)
+     no和default不自动装配
+    byType:根据属性类型(接口和实现类匹配),有且只有一个bean匹配属性类型赋值,0个的时候使用默认值null,报空指针异常,多个的时候报没有唯一bean异常
+    byName:根据属性名,byType不行的时候用byName,即多个bean类型匹配的时候使用byName
+    constructor:构造器 -->
+    <bean id="userController" class="com.beanoung.spring.controller.UserController" autowire="byType">
+        <!-- <property name="userService" ref="userService"></property> -->
+    </bean>
+
+    <bean id="userService" class="com.beanoung.spring.service.impl.UserServiceImpl" autowire="byType">
+        <!-- <property name="userDao" ref="userDao"></property> -->
+    </bean>
+
+    <bean id="userDao" class="com.beanoung.spring.dao.impl.UserDaoImpl"></bean>
+
+</beans>

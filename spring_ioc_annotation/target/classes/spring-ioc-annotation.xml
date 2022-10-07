@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描组件 -->
+    <!-- use-default-filters:默认过滤规则,
+     true(默认)就是扫描base-package下的所有类,这时使用include-filter没有用,还是全部扫描,使用exclude-filter才有意义
+     false就是都不扫描,这时使用include-filter来设置扫描的类      这样繁琐,不使用
+     -->
+    <context:component-scan base-package="com.beanoung.spring" use-default-filters="true">
+        <!-- exclude-filter:排除 -->
+        <!-- type: annotation:根据注解的类型排除      assignable:根据类的类型排除 -->
+        <!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+        <!-- <context:exclude-filter type="assignable" expression="com.beanoung.spring.controller.UserController"/> -->
+
+        <!-- include-filter:包含 -->
+        <!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> -->
+    </context:component-scan>
+
+</beans>

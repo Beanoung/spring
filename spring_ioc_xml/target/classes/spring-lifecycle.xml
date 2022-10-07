@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 生命周期 -->
+    <bean id="user111" class="com.beanoung.spring.pojo.User" init-method="initMethod" destroy-method="destroyMethod" scope="singleton">
+        <property name="id" value="1"></property>
+        <property name="username" value="小a"></property>
+        <property name="password" value="aaa"></property>
+        <property name="age" value="10"></property>
+    </bean>
+
+    <bean id="myBeanPostProcessor" class="com.beanoung.spring.process.MyBeanPostProcessor"></bean>
+
+</beans>
